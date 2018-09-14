@@ -1,0 +1,15 @@
+nav{
+    border:1px solid blue;
+}
+
+.navbar-brand{
+    color: white;
+}
+
+#navbarNav{
+    width: 400px;
+    position: relative;
+    float: right;
+   border: 1px solid red;
+   
+}
