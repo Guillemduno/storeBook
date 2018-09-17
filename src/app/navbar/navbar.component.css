@@ -1,15 +1,16 @@
-nav{
-    border:1px solid blue;
+
+
+.searchInput{
+    width: 500px;
+    border-radius: 5px;
+    margin: auto;
+    padding: 5px;
+}
+.searchPlusBtn{
+  /*  border: 1px solid red;*/
+    width: 650px;
 }
 
-.navbar-brand{
-    color: white;
-}
-
-#navbarNav{
-    width: 400px;
-    position: relative;
-    float: right;
-   border: 1px solid red;
-   
+#logoBrand{
+    font-size: 3em;
 }
