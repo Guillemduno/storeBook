@@ -1,4 +1,19 @@
 
+<hr>
+<input type="text" [(ngModel)]="bookToSave">
+<button (click)="saveBook()">Add book</button>
+
+<p *ngIf="bookToSave">You are typing this book: <strong>{{bookToSave}}</strong></p>
+<hr>
+<h3>List of books</h3>
+<ul>
+    <li *ngFor="let book of list_of_books; let i = index">{{i}}{{book}}
+        <button (click)="deleteBook(i)">Delete book</button>
+    </li>
+</ul>
+
+<hr>
+
 <div class="container mt-3">
     <h3 class="text-white">{{title}}</h3>
     <hr/>
