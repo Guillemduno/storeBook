@@ -1,20 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/models/book-model';
 import{BooksServices} from "../services/books.services";
+import {BookRequestServices} from "../services/booksRequest.services";
 
 
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',
   styleUrls: ['./book.component.css'],
-  providers:[BooksServices]
+  providers:[BooksServices, BookRequestServices]
 })
 export class BookComponent implements OnInit {
   public title:string ="Random Books";
   public books:Array<Book>; 
   public list_of_books:Array<string>;
   public bookToSave:string;
-    constructor( private _book:BooksServices) {
+  public items;
+    constructor( private _book:BooksServices, private _bookRequest:BookRequestServices) {
         this.books=[
           new Book("/assets/kafka.jpg","3432-456-76-89-23", "Kafka en la orilla", "Haruki Murakami", "Best novel ever and forever", 13.99, 2300, true, "novel"),
           new Book("/assets/chica.jpg","3432-456-76-89-23", "La chica del cumpleaños", "Haruki Murakami", "Best novel ever", 34.20, 4000, true, "novel"),
@@ -32,6 +34,21 @@ export class BookComponent implements OnInit {
     this._book.addTitle("Somebody to love");
     this._book.addTitle("Scary train");
     this.list_of_books = this._book.getTitles();
+    console.log(this._bookRequest.getTest());
+    
+    this._bookRequest.getItems().subscribe(
+      result =>{
+          this.items = result;
+          if(!this.items){
+            console.log("Items not found...");
+          }
+          console.log(result);
+      },
+      error => {
+        console.log("Can't request info");
+      }
+    );
+
   }
 
   saveBook(){
