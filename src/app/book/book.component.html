@@ -1,6 +1,28 @@
+<div class="container mt-3">
+    <h3 class="text-white">{{title}}</h3>
+    <hr/>
+  <div (click)="showAlert()" class="card float-left mb-3 ml-3" *ngFor="let item of items; let i = index" style="width: 12rem;">
+      <img  src="{{item.img}}" alt="book info" class="card-img-top">
+      <div class="card-body">
+          <h5>{{item.title}}</h5>
+          <p>autor</p>
+          <h4><strong>20 €</strong></h4>
+          <button class="btn btn-success">Buy it!</button>
+      </div>
+  </div>
+  <div class="clearfix">
+    
+    </div>
+</div>
+
+
+
 <h3>List of Items</h3>
 <ul>
-    <li *ngFor="let item of items"><strong>{{item.format}}</strong></li>
+    <li *ngFor="let item of items"><strong>{{item.title}}</strong>
+    
+    <img src="{{item.img}}" alt="" srcset="">
+    </li>
 </ul>
 
 

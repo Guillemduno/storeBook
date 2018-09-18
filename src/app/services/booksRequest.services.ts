@@ -9,8 +9,9 @@ export class BookRequestServices{
 
     constructor(private _http:Http){
        // this.url = "https://jsonplaceholder.typicode.com/posts";
-        this.url = "https://ghibliapi.herokuapp.com/films";
-        this.url = "https://reststop.randomhouse.com/resources/titles";
+      //  this.url = "https://ghibliapi.herokuapp.com/films";
+
+       this.url = "https://raw.githubusercontent.com/Guillemduno/List-of-books-/master/listofBooks.json";
     }
     getTest(){
         return "Hi world!";
