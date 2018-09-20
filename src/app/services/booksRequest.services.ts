@@ -8,17 +8,17 @@ export class BookRequestServices{
     public url:string;
 
     constructor(private _http:Http){
-       // this.url = "https://jsonplaceholder.typicode.com/posts";
-      // this.url = "https://ghibliapi.herokuapp.com/films";
-
-       this.url = "https://raw.githubusercontent.com/Guillemduno/List-of-books-/master/listofBooks.json";
-    }
-    getTest(){
-        return "Hi world!";
+        //this.url = "https://jsonplaceholder.typicode.com/posts";
+        this.url = "https://raw.githubusercontent.com/Guillemduno/List-of-books-/master/listofBooks.json";
+       // this.url = "https://ghibliapi.herokuapp.com/films";
+        
     }
 
     getItems(){
         return this._http.get(this.url).pipe(map(res => res.json()));
     }
 
+    getId(id){
+        return this._http.get(this.url+"/"+id).pipe(map(res => res.json()));
+    }
 }

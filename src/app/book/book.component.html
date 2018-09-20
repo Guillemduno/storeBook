@@ -1,32 +1,19 @@
 
-<h3>Api items</h3>
-<h3 class="text-white">{{t}}</h3>
+
 <div class="container mt-3">
-   
-  <div (click)="showAlert()" class="card float-left mb-3 ml-3" *ngFor="let item of items; let i = index" style="width: 12rem;">
+    <h3>{{title}}</h3>
+  <div class="card float-left mb-3 ml-3" *ngFor="let item of items; let i = index" style="width: 12rem;">
       <img  src="{{item.img}}" alt="book info" class="card-img-top">
       <div class="card-body">
           <h5>{{item.title}}</h5>
           <p>{{item.author}}</p>
           <h4><strong>{{item.price}}</strong></h4>
-          <button class="btn btn-success">Buy it!</button>
+          <button class="btn btn-success" routerLink= "/description/{{item.id}}">Buy it!</button>
       </div>
   </div>
-  <div class="clearfix">
-    
-    </div>
+  <div class="clearfix"></div>
 </div>
 
-<hr>
-<input type="text" [(ngModel)]="bookToSave">
-<button (click)="saveBook()">Add book</button>
-<p *ngIf="bookToSave">You are typing this book: <strong>{{bookToSave}}</strong></p>
-<h3>List of books</h3>
-<ul>
-    <li *ngFor="let book of list_of_books; let i = index">{{i}}{{book}}
-        <button (click)="deleteBook(i)">Delete book</button>
-    </li>
-</ul>
 
 
 
