@@ -1,0 +1,9 @@
+
+.floatingLeft{
+    position: relative;
+    float: left;
+}
+
+ .autorColor{
+     color: rgb(243,134,48);
+ }

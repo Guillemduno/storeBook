@@ -4,3 +4,10 @@ body{
   font-size: 100%;
 }
 
+img{
+  width: auto;
+}
+.borderLine{
+  border: 1px solid red;
+}
+
