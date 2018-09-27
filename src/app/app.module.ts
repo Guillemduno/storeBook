@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from "@angular/forms";
-import {HttpModule} from "@angular/http";
+import { HttpClientModule} from "@angular/common/http";
 
 import {routing, appRoutingProviders} from "./app.routing";
 
@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { DescriptionComponent } from './description/description.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { DescriptionComponent } from './description/description.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     routing
   ],
   providers: [appRoutingProviders],

@@ -1,10 +1,12 @@
 
 
 <div class="container mt-5">
- <div class="photoHolder"></div>
+ <div class="photoHolder">
+   <img src={{book.img}} alt="" srcset="">
+ </div>
   <div *ngIf="book" class="descriptionBook text-justify">
     <h2>Titulo: {{book.title}}</h2>
-    <h4>Autor{{book.director}}</h4>
+    <h4>Autor{{book.author}}</h4>
     <p class="mt-4"><strong>Descripción:</strong>{{book.description}}</p>
       <p></p>
     <button (click)="goBack()" class="btn text-white bg-dark float-left">Volver</button>

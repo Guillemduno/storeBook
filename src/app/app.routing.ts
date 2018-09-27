@@ -12,7 +12,7 @@ const appRoutes: Routes =[
     {path:"", component: BookComponent},
     {path:"about", component: AboutComponent},
     {path:"contact", component: ContactComponent},
-    {path:"description/:id", component: DescriptionComponent},
+    {path:"description/:isbn", component: DescriptionComponent},
     {path:"**", component: BookComponent}
 ];
 

@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import{ ActivatedRoute} from "@angular/router";
 import {Location} from "@angular/common";
 
+
 import{BookRequestServices} from "../services/booksRequest.services";
 import {Book} from "src/models/bookModel";
 
@@ -26,9 +27,9 @@ export class DescriptionComponent implements OnInit {
   }
 
   showId(){
-    debugger;
-    let idNum = this.route.snapshot.paramMap.get('id');
-    this.bookRequestServices.getId(idNum).subscribe((res : Book)=> {this.book=res;});
+    
+    let idNum = this.route.snapshot.paramMap.get('isbn');
+    this.bookRequestServices.getIsbn(idNum).then((res : Book)=> {this.book=res;});
   }
 
   goBack(){
