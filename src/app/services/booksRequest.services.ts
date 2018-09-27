@@ -22,7 +22,7 @@ export class BookRequestServices {
                         resolve(books[i]);
                     }
                 }
-            });
+            }).catch(err => console.log(err));;
         });
     }
 }

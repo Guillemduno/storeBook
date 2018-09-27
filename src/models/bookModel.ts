@@ -1,10 +1,14 @@
 export class Book{
+    public img: string;
     public isbn:number;
     public title:string;
-    public description:string;
     public author:string;
-    public year: number;
-
+    public description:string;
+    public price: number;
+    public stock: number;
+    public isFavourite:boolean;
+    public genere: string;
+  
     constructor(){
         
     }

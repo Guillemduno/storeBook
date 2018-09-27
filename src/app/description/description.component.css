@@ -15,3 +15,7 @@
 .clearFloat{
     clear: both;
 }
+
+p.lineSmall{
+    line-height: 0.5;
+}

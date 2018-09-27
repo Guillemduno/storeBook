@@ -1,13 +1,19 @@
 
 
 <div class="container mt-5">
- <div class="photoHolder">
-   <img src={{book.img}} alt="" srcset="">
+ <div class="photoHolder" *ngIf="book">
+   <img src="{{book.img}}" alt="Cover book">
  </div>
   <div *ngIf="book" class="descriptionBook text-justify">
-    <h2>Titulo: {{book.title}}</h2>
-    <h4>Autor{{book.author}}</h4>
-    <p class="mt-4"><strong>Descripción:</strong>{{book.description}}</p>
+    <h2>{{book.title | uppercase}}</h2>
+    <h4 class="autorColor">{{book.author}}</h4>
+    <br>
+    <p class="lineSmall"><strong>Isbn: </strong>{{book.isbn}}</p>
+    <p class="lineSmall"><strong>Genero: </strong>{{book.genere}}</p>
+    <p class="lineSmall"><strong>Precio: </strong>{{book.price}} €</p>
+  </div>
+  <div *ngIf="book" class="descriptionBook text-justify">
+    <p class="mt-4"><strong>Descripción: </strong>{{book.description}}</p>
       <p></p>
     <button (click)="goBack()" class="btn text-white bg-dark float-left">Volver</button>
     <button class="btn text-white bg-success ml-2 float-right">Compra ya!</button>

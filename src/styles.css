@@ -4,8 +4,13 @@ body{
   font-size: 100%;
 }
 
+.autorColor{
+  color: rgb(243,134,48);
+}
+
 img{
-  width: auto;
+  width: 100%;
+  
 }
 .borderLine{
   border: 1px solid red;

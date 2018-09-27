@@ -14,7 +14,6 @@ import {Book} from "src/models/bookModel";
   providers:[BookRequestServices]
 })
 export class DescriptionComponent implements OnInit {
-  public title:string = "Book description";
   public book:Book;
   constructor(  private route: ActivatedRoute, private bookRequestServices: BookRequestServices,
     private location: Location) {
@@ -27,7 +26,6 @@ export class DescriptionComponent implements OnInit {
   }
 
   showId(){
-    
     let idNum = this.route.snapshot.paramMap.get('isbn');
     this.bookRequestServices.getIsbn(idNum).then((res : Book)=> {this.book=res;});
   }
