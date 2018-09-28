@@ -17,7 +17,7 @@ export class DescriptionComponent implements OnInit {
   public book:Book;
   constructor(  private route: ActivatedRoute, private bookRequestServices: BookRequestServices,
     private location: Location) {
-    this.showId();
+    this.getIsbn();
 
      }
 
@@ -25,9 +25,9 @@ export class DescriptionComponent implements OnInit {
     
   }
 
-  showId(){
-    let idNum = this.route.snapshot.paramMap.get('isbn');
-    this.bookRequestServices.getIsbn(idNum).then((res : Book)=> {this.book=res;});
+  getIsbn(){
+    let isbnNum = this.route.snapshot.paramMap.get('isbn');
+    this.bookRequestServices.getIsbn(isbnNum).then((res : Book)=> {this.book=res;});
   }
 
   goBack(){

@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { DescriptionComponent } from './description/description.component';
+import { BooksByCategoryComponent } from './books-by-category/books-by-category.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { DescriptionComponent } from './description/description.component';
     LoginComponent,
     NavbarComponent,
     FooterComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    BooksByCategoryComponent
   ],
   imports: [
     BrowserModule,

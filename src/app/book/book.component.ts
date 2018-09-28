@@ -12,17 +12,33 @@ import { Book } from 'src/models/bookModel';
 export class BookComponent {
   public title:string ="Novels";
   public books :Book[];
+  public booksBy :Book[] = new Array();
+ 
     constructor( private _bookRequest:BookRequestServices) {
        this.getAllBooks();
+
       }
 
   ngOnInit(){
    
   }
 
-  getAllBooks(){
-    this._bookRequest.getBooks().then((books:Book[]) =>{
-      this.books = books;
-    }).catch(err => console.log(err));
+
+getAllBooks(){
+  this._bookRequest.getBooks().then((books:Book[]) =>{
+    this.books = books;
+   // this.booksByCategory("Cómic");
+  }).catch(err => console.log(err));
+}
+
+  booksByCategory(category:string){
+    this.booksBy = [];
+    for(var i = 0; i<this.books.length; i++){
+      if(this.books[i].genere == category ){
+         this.booksBy.push(this.books[i]); 
+      }
+    }
+    return this.booksBy;
   }
 }
+
