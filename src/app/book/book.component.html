@@ -1,13 +1,13 @@
 
 <div class="container mt-3">
     <h1 class="col-12 text-dark">Todos</h1>
-  <div class="float-left col-xs-12 col-md-6 col-lg-2 mt-5 mb-5" *ngFor="let book of books | slice:0:5; let i = index">
-      <img  src="{{book.img}}" alt="book cover" class="col-12">
+  <div class="float-left col-xs-12 col-md-6 col-lg-2 mt-5 mb-5" *ngFor="let book of books | slice:0:6; let i = index">
+      <img  src="{{book.img}}" alt="book cover"  [routerLink]="['/description', book.isbn]" class="imgSelect col-12">
       <div  class="col-12 mt-3">
           <p class="text-truncate">{{book.title}}</p>
           <p class="text-truncate autorColor">{{book.author}}</p>
           <p class="float-right"><strong>{{book.price}}€</strong></p>
-          <button class="btn btn-success col-12" [routerLink]="['/description', book.isbn]">Buy it!</button>
+          <button class="btn btn-success col-12" (click)="cart.addBookToCart(book)"  [routerLink]="['/cartShop', book.isbn]">Buy it!</button>
       </div>
   </div>
   <div class="clearfix"></div>
@@ -16,12 +16,12 @@
 <div class="container mt-3" *ngIf="books">
     <h1 class="col-12 text-dark">Cómic</h1>
   <div  class="float-left col-xs-12 col-md-6 col-lg-2 mt-5 mb-5" *ngFor="let bookBy of booksByCategory('Cómic'); let i = index">
-      <img  src="{{bookBy.img}}" alt="book cover" class="col-12">
+      <img  src="{{bookBy.img}}" alt="book cover" class="imgSelect col-12"  [routerLink]="['/description', bookBy.isbn]">
       <div  class="col-12 mt-3">
           <p class="text-truncate">{{bookBy.title}}</p>
           <p class="text-truncate autorColor">{{bookBy.author}}</p>
           <p class="float-right"><strong>{{bookBy.price}}€</strong></p>
-          <button class="btn btn-success col-12" [routerLink]="['/description', bookBy.isbn]">Buy it!</button>
+          <button class="btn btn-success col-12" [routerLink]="['/cartShop', bookBy.isbn]">Buy it!</button>
       </div>
   </div>
   <div class="clearfix"></div>
@@ -31,12 +31,12 @@
 <div class="container mt-3" *ngIf="books">
         <h1 class="col-12 text-dark">Novela</h1>
       <div  class="float-left col-xs-12 col-md-6 col-lg-2 mt-5 mb-5" *ngFor="let bookByNovel of booksByCategory('Novela'); let i = index">
-          <img  src="{{bookByNovel.img}}" alt="book cover" class="col-12">
+          <img  src="{{bookByNovel.img}}" alt="book cover" class="imgSelect col-12"  [routerLink]="['/description', bookByNovel.isbn]">
           <div  class="col-12 mt-3">
               <p class="text-truncate">{{bookByNovel.title}}</p>
               <p class="text-truncate autorColor">{{bookByNovel.author}}</p>
               <p class="float-right"><strong>{{bookByNovel.price}}€</strong></p>
-              <button class="btn btn-success col-12" [routerLink]="['/description', bookByNovel.isbn]">Buy it!</button>
+              <button class="btn btn-success col-12" [routerLink]="['/cartShop', bookByNovel.isbn]">Buy it!</button>
           </div>
       </div>
       <div class="clearfix"></div>
@@ -45,12 +45,12 @@
 <div class="container mt-3" *ngIf="books">
         <h1 class="col-12 text-dark">Infantil</h1>
       <div  class="float-left col-xs-12 col-md-6 col-lg-2 mt-5 mb-5" *ngFor="let bookByInfant of booksByCategory('Infantil'); let i = index">
-          <img  src="{{bookByInfant.img}}" alt="book cover" class="col-12">
+          <img  src="{{bookByInfant.img}}" alt="book cover" class="imgSelect col-12"  [routerLink]="['/description', bookByInfant.isbn]">
           <div  class="col-12 mt-3">
               <p class="text-truncate">{{bookByInfant.title}}</p>
               <p class="text-truncate autorColor">{{bookByInfant.author}}</p>
               <p class="float-right"><strong>{{bookByInfant.price}}€</strong></p>
-              <button class="btn btn-success col-12" [routerLink]="['/description', bookByInfant.isbn]">Buy it!</button>
+              <button class="btn btn-success col-12" [routerLink]="['/cartShop', bookByInfant.isbn]">Buy it!</button>
           </div>
       </div>
       <div class="clearfix"></div>

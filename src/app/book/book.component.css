@@ -1,1 +1,9 @@
 
+.imgSelect{
+    cursor: pointer;
+}
+
+.imgSelect:hover{
+    opacity: 0.8;
+    
+}

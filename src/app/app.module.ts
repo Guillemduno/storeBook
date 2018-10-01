@@ -13,7 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { DescriptionComponent } from './description/description.component';
-import { BooksByCategoryComponent } from './books-by-category/books-by-category.component';
+import { CartShopComponent } from './cart-shop/cart-shop.component';
+
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { BooksByCategoryComponent } from './books-by-category/books-by-category.
     NavbarComponent,
     FooterComponent,
     DescriptionComponent,
-    BooksByCategoryComponent
+    CartShopComponent
   ],
   imports: [
     BrowserModule,

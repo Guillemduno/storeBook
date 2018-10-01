@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BookRequestServices} from "../services/booksRequest.services";
 import { Book } from 'src/models/bookModel';
+import {Cart} from 'src/models/cartModel';
 
 
 @Component({
@@ -11,9 +12,11 @@ import { Book } from 'src/models/bookModel';
 })
 export class BookComponent {
   public title:string ="Novels";
+  public book:Book;
   public books :Book[];
   public booksBy :Book[] = new Array();
- 
+  public cart:Cart= new Cart();
+
     constructor( private _bookRequest:BookRequestServices) {
        this.getAllBooks();
 
