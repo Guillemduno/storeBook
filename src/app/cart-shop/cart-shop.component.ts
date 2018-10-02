@@ -15,13 +15,15 @@ import { CartService } from '../services/cart.service';
 export class CartShopComponent implements OnInit {
   public bookCart: Book;
   public listBooksCart:Book[] = new Array;
+  public totalCart:number;
   constructor(private _route:ActivatedRoute, private _bookRequest: BookRequestServices, private _location:Location, private _cartService: CartService ) { 
     this.getIsbn();
     this.listBooksCart = this._cartService.cart.listCartBooks;
+    this.totalCart = this._cartService.totalPrice();
   }
 
   ngOnInit() {
-   
+
   }
   getIsbn(){
     let isbnNum = this._route.snapshot.paramMap.get('isbn');
@@ -33,8 +35,15 @@ export class CartShopComponent implements OnInit {
   }
 
   delete(i:number){
-    this._cartService.cart.deleteBookFromCart(i);
+    //debugger;
+    this._cartService.deleteBook(i);
+    this.totalCart = this._cartService.totalPriceOfBooks;
     console.log("Book deleted!");
-
+   
   }
+
+
+  
+
+
 }

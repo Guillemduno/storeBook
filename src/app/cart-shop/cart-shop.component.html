@@ -21,10 +21,13 @@
                             <button (click)="delete(i)">Borrar</button>
                         </td>
                     </tr>
+                   
                 </tbody>
-
+                <tr>
+                    <td>TOTAL: {{totalCart}}</td>
+                </tr>
             </table>
-            <button (click)="goBack()">Seguir Comprando</button>
+            <button  routerLink="/inicio">Seguir Comprando</button>
             
 </div>
 

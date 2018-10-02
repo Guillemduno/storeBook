@@ -11,6 +11,8 @@ import { CartShopComponent } from "./cart-shop/cart-shop.component";
 
 const appRoutes: Routes =[
     {path:"", component: BookComponent},
+
+    {path:"inicio", component: BookComponent},
     {path:"about", component: AboutComponent},
     {path:"contact", component: ContactComponent},
     {path:"description/:isbn", component: DescriptionComponent},

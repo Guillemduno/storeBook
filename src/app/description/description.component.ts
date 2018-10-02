@@ -5,6 +5,7 @@ import {Location} from "@angular/common";
 
 import{BookRequestServices} from "../services/booksRequest.services";
 import {Book} from "src/models/bookModel";
+import { CartService } from '../services/cart.service';
 
 
 
@@ -17,7 +18,7 @@ import {Book} from "src/models/bookModel";
 export class DescriptionComponent implements OnInit {
   public book:Book;
   constructor(  private route: ActivatedRoute, private bookRequestServices: BookRequestServices,
-    private location: Location) {
+    private location: Location, private _cartService:CartService) {
     this.getIsbn();
 
      }
@@ -33,5 +34,8 @@ export class DescriptionComponent implements OnInit {
 
   goBack(){
     this.location.back();
+  }
+  addBookToList(book){
+    this._cartService.addBook(book);
   }
 }

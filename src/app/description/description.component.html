@@ -16,7 +16,7 @@
     <p class="mt-4"><strong>Descripción: </strong>{{book.description}}</p>
       <p></p>
     <button (click)="goBack()" class="btn text-white bg-dark float-left">Volver</button>
-    <button class="btn text-white bg-success ml-2 float-right">Compra ya!</button>
+    <button class="btn text-white bg-success ml-2 float-right"(click)="addBookToList(book)"  [routerLink]="['/cartShop', book.isbn]">Comprar</button>
   </div>
   <div class="clearFloat"></div>
 </div>

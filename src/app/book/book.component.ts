@@ -30,7 +30,6 @@ export class BookComponent {
   getAllBooks(){
     this._bookRequest.getBooks().then((books:Book[]) =>{
       this.books = books;
-    // this.booksByCategory("Cómic");
     }).catch(err => console.log(err));
   }
 

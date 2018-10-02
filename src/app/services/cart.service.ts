@@ -10,8 +10,10 @@ import { Book } from '../../models/bookModel';
 export class CartService {
   public cart:Cart= new Cart();
   public num:number;
+  public totalPriceOfBooks:number;
+
   constructor() { 
-  
+   
   }
 
   addBook(x:Book){
@@ -21,5 +23,15 @@ export class CartService {
 
   deleteBook(idNum:number){
     this.cart.deleteBookFromCart(idNum);
+    this.totalPriceOfBooks = this.cart.total;
+    return this.totalPriceOfBooks;
+ 
   }
+
+  totalPrice(){
+   this.totalPriceOfBooks = this.cart.addBookToTotal();
+   return this.totalPriceOfBooks;
+
+  }
+
 }
