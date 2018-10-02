@@ -7,7 +7,7 @@
           <p class="text-truncate">{{book.title}}</p>
           <p class="text-truncate autorColor">{{book.author}}</p>
           <p class="float-right"><strong>{{book.price}}€</strong></p>
-          <button class="btn btn-success col-12" (click)="cart.addBookToCart(book)"  [routerLink]="['/cartShop', book.isbn]">Buy it!</button>
+          <button class="btn btn-success col-12" (click)="addBookToList(book)"  [routerLink]="['/cartShop', book.isbn]">Comprar</button>
       </div>
   </div>
   <div class="clearfix"></div>
@@ -21,7 +21,7 @@
           <p class="text-truncate">{{bookBy.title}}</p>
           <p class="text-truncate autorColor">{{bookBy.author}}</p>
           <p class="float-right"><strong>{{bookBy.price}}€</strong></p>
-          <button class="btn btn-success col-12" [routerLink]="['/cartShop', bookBy.isbn]">Buy it!</button>
+          <button class="btn btn-success col-12"  (click)="addBookToList(bookBy)" [routerLink]="['/cartShop', bookBy.isbn]">Comprar</button>
       </div>
   </div>
   <div class="clearfix"></div>
@@ -36,7 +36,7 @@
               <p class="text-truncate">{{bookByNovel.title}}</p>
               <p class="text-truncate autorColor">{{bookByNovel.author}}</p>
               <p class="float-right"><strong>{{bookByNovel.price}}€</strong></p>
-              <button class="btn btn-success col-12" [routerLink]="['/cartShop', bookByNovel.isbn]">Buy it!</button>
+              <button class="btn btn-success col-12"  (click)="addBookToList(bookByNovel)" [routerLink]="['/cartShop', bookByNovel.isbn]">Comprar</button>
           </div>
       </div>
       <div class="clearfix"></div>
@@ -50,7 +50,7 @@
               <p class="text-truncate">{{bookByInfant.title}}</p>
               <p class="text-truncate autorColor">{{bookByInfant.author}}</p>
               <p class="float-right"><strong>{{bookByInfant.price}}€</strong></p>
-              <button class="btn btn-success col-12" [routerLink]="['/cartShop', bookByInfant.isbn]">Buy it!</button>
+              <button class="btn btn-success col-12"  (click)="addBookToList(bookByInfant)" [routerLink]="['/cartShop', bookByInfant.isbn]">Comprar</button>
           </div>
       </div>
       <div class="clearfix"></div>

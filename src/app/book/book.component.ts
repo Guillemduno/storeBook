@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {BookRequestServices} from "../services/booksRequest.services";
+
 import { Book } from 'src/models/bookModel';
-import {Cart} from 'src/models/cartModel';
+import { CartService } from '../services/cart.service';
+
 
 
 @Component({
@@ -15,24 +17,22 @@ export class BookComponent {
   public book:Book;
   public books :Book[];
   public booksBy :Book[] = new Array();
-  public cart:Cart= new Cart();
+ 
 
-    constructor( private _bookRequest:BookRequestServices) {
+    constructor( private _bookRequest:BookRequestServices, private _cartService: CartService) {
        this.getAllBooks();
-
       }
 
   ngOnInit(){
    
   }
 
-
-getAllBooks(){
-  this._bookRequest.getBooks().then((books:Book[]) =>{
-    this.books = books;
-   // this.booksByCategory("Cómic");
-  }).catch(err => console.log(err));
-}
+  getAllBooks(){
+    this._bookRequest.getBooks().then((books:Book[]) =>{
+      this.books = books;
+    // this.booksByCategory("Cómic");
+    }).catch(err => console.log(err));
+  }
 
   booksByCategory(category:string){
     this.booksBy = [];
@@ -42,6 +42,10 @@ getAllBooks(){
       }
     }
     return this.booksBy;
+  }
+
+  addBookToList(book){
+    this._cartService.addBook(book);
   }
 }
 

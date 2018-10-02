@@ -1,5 +1,32 @@
 
 
-<p>You are shooping this items:</p>
-<p *ngIf="bookCart">{{bookCart.title}}</p>
-<p *ngIf="bookCart">{{bookCart.price}}</p>
+
+<div class="container">
+        <h5 class="mt-3 mb-3" >You are shooping this items:</h5>
+        <table class="table">
+                <thead>
+                    <tr>
+                        <th>Filas</th>
+                        <th>Título</th>
+                        <th>Precio</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let list of listBooksCart; let i = index">
+                    <tr>
+                        <td>{{i+1}}</td>
+                        <td>{{list.title}}</td>
+                        <td>{{list.price}}€</td>
+                        <td>
+                            <button (click)="delete(i)">Borrar</button>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <button (click)="goBack()">Seguir Comprando</button>
+            
+</div>
+
+
+
