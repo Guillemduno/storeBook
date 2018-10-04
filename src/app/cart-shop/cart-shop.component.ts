@@ -13,9 +13,11 @@ import { CartService } from '../services/cart.service';
   providers:[BookRequestServices]
 })
 export class CartShopComponent implements OnInit {
+  
   public bookCart: Book;
   public listBooksCart:Book[] = new Array;
   public totalCart:number;
+
   constructor(private _route:ActivatedRoute, private _bookRequest: BookRequestServices, private _location:Location, private _cartService: CartService ) { 
     this.getIsbn();
     this.listBooksCart = this._cartService.cart.listCartBooks;
@@ -35,15 +37,10 @@ export class CartShopComponent implements OnInit {
   }
 
   delete(i:number){
-    //debugger;
     this._cartService.deleteBook(i);
     this.totalCart = this._cartService.totalPriceOfBooks;
     console.log("Book deleted!");
    
   }
-
-
-  
-
 
 }

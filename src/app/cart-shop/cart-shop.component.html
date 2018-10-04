@@ -1,34 +1,33 @@
 
-
-
 <div class="container">
-        <h5 class="mt-3 mb-3" >You are shooping this items:</h5>
+        <h5 class="mt-5 mb-5 text-success totalCartFont " >Resumen de tu pedido:</h5>
         <table class="table">
                 <thead>
                     <tr>
-                        <th>Filas</th>
-                        <th>Título</th>
-                        <th>Precio</th>
-                        <th>Acción</th>
+                        <th scope="col">Filas</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Acción</th>
                     </tr>
                 </thead>
-                <tbody *ngFor="let list of listBooksCart; let i = index">
-                    <tr>
-                        <td>{{i+1}}</td>
+                <tbody >
+                    <tr *ngFor="let list of listBooksCart; let i = index">
+                        <th scope="row">{{i+1}}</th>
                         <td>{{list.title}}</td>
                         <td>{{list.price}}€</td>
                         <td>
-                            <button (click)="delete(i)">Borrar</button>
+                            <button class="btn text-white bg-danger" (click)="delete(i)">Quitar</button>
                         </td>
                     </tr>
-                   
                 </tbody>
                 <tr>
-                    <td>TOTAL: {{totalCart}}</td>
+                    <td></td>
+                    <td colspan="2" class="float-right totalCartFont">TOTAL: </td>
+                    <td class="totalCartFont"> {{totalCart}}€</td>
                 </tr>
             </table>
-            <button  routerLink="/inicio">Seguir Comprando</button>
-            
+            <button class="btn bg-success text-white align-center" routerLink="/inicio">Seguir Comprando</button> 
+            <p class="clearfix"></p>     
 </div>
 
 

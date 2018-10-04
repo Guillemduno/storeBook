@@ -22,8 +22,7 @@ export class CartService {
   }
 
   deleteBook(idNum:number){
-    this.cart.deleteBookFromCart(idNum);
-    this.totalPriceOfBooks = this.cart.total;
+    this.totalPriceOfBooks = this.cart.deleteBookFromCart(idNum);
     return this.totalPriceOfBooks;
  
   }
