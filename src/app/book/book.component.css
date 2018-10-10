@@ -4,6 +4,11 @@
 }
 
 .imgSelect:hover{
-    opacity: 0.8;
-    
+    opacity: 0.8; 
 }
+
+h1{
+    font-size: 120%;
+}
+
+

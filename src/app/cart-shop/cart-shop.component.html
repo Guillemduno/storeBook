@@ -5,6 +5,7 @@
                 <thead>
                     <tr>
                         <th scope="col">Filas</th>
+                        <th scope="col">Libro</th>
                         <th scope="col">Título</th>
                         <th scope="col">Precio</th>
                         <th scope="col">Acción</th>
@@ -12,7 +13,8 @@
                 </thead>
                 <tbody >
                     <tr *ngFor="let list of listBooksCart; let i = index">
-                        <th scope="row">{{i+1}}</th>
+                        <th scope="row" >{{i+1}}</th>
+                        <td><img src="{{list.img}}" class="cartBookSize" alt="cover"></td>
                         <td>{{list.title}}</td>
                         <td>{{list.price}}€</td>
                         <td>
@@ -22,8 +24,9 @@
                 </tbody>
                 <tr>
                     <td></td>
-                    <td colspan="2" class="float-right totalCartFont">TOTAL: </td>
-                    <td class="totalCartFont"> {{totalCart}}€</td>
+                    <td></td>
+                    <td colspan="2" class="float-right totalCartFont text-success">TOTAL: </td>
+                    <td class="text-succes totalCartFont text-success"> {{totalCart}}€</td>
                 </tr>
             </table>
             <button class="btn bg-success text-white align-center" routerLink="/inicio">Seguir Comprando</button> 
